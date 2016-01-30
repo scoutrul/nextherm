@@ -1,0 +1,54 @@
+/*   _____       _                      _                                 _              
+ //  / ____|     | |                    | |                    /\         | |             
+ // | |  __  ___ | | _____   ____ _  ___| |__   _____   __    /  \   _ __ | |_ ___  _ __  
+ // | | |_ |/ _ \| |/ _ \ \ / / _` |/ __| '_ \ / _ \ \ / /   / /\ \ | '_ \| __/ _ \| '_  // | |__| | (_) | | (_) \ V / (_| | (__| | | | (_) \ V /   / ____ \| | | | || (_) | | | |
+ //  \_____|\___/|_|\___/ \_/ \__,_|\___|_| |_|\___/ \_/   /_/    \_\_| |_|\__\___/|_| |_|
+ */
+
+html {
+  font-size: 18px;
+}
+
+body {
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 200%;
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 1.3rem;
+  }
+}
+
+.screen1 {
+  background-color: #ccc;
+}
+
+.screen2 {
+  background-color: #fcd;
+}
+
+.screen3 {
+  background-color: #dcd;
+}
+
+.screen4 {
+  background-color: #0fd;
+}
+
+.screen5 {
+  background-color: #ff0;
+}
+
+.screen6 {
+  background-color: #999;
+}
