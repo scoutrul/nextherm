@@ -1,0 +1,62 @@
+@import url("https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800,300&subset=cyrillic,latin");
+@import url("https://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic");
+html,
+body {
+  font-size: 18px;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 300;
+}
+body {
+  font-size: 2rem;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3 {
+  font-family: 'PT Serif', serif;
+  padding: 50px 0;
+  color: #1d5298;
+  letter-spacing: 0.06em;
+}
+h1 {
+  font-size: 330%;
+}
+.container {
+  width: 100%;
+  min-width: 960px;
+  max-width: 1240px;
+  margin: auto;
+  z-index: 3;
+}
+.container {
+  padding: 20px 10px;
+}
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 1.4rem;
+  }
+  .container {
+    padding: 40px 30px;
+  }
+}
+@media screen and (min-width: 960px) {
+  body {
+    font-size: 1.2rem;
+  }
+  .container {
+    padding: 40px 40px;
+  }
+}

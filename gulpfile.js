@@ -78,7 +78,7 @@
 
  // соединение файлов CSS
  gulp.task('concss', function() {
-     gulp.src(['app/css/*.css'])
+     gulp.src(['app/css/styles.css'])
          .pipe(concss('css.css'))
          .pipe(gulp.dest('app'))
          .pipe(notify('CONCAT CSS done'))
