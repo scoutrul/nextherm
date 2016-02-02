@@ -71,15 +71,23 @@
      gulp.src('app/js/*.js')
          .pipe(concat('script.min.js'))
          .pipe(uglify())
-         .pipe(gulp.dest('./dist/js'));
+         .pipe(gulp.dest('./dist/js'))
+         .pipe(notify('jss done'))
+
  });
 
 
 
-
+ // css add
+ gulp.task('css', function() {
+     gulp.src('app/css/*.css')
+         .pipe(minifyCSS())
+         .pipe(concat('css.css'))
+         .pipe(gulp.dest('./dist/css'));
+ });
 
  // compile Stylus = 
- gulp.task('stylus', function() {
+ gulp.task('stylus', ['css'],function() {
      gulp.src('app/**/*.styl')
          .pipe(stylus())
          .pipe(minifyCSS())
@@ -114,4 +122,5 @@
      gulp.watch('app/js/*.js', ['jss']);
      gulp.watch('app/jade/*.jade', ['jade']);
      gulp.watch('app/images/*', ['imgminify']);
+     gulp.watch('app/css/*.css', ['css']);
  });

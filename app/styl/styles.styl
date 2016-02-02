@@ -7,16 +7,19 @@
  */                                                                                    
     
 
- @import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800,300&subset=cyrillic,latin');
+ @import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800,300&subset=cyrillic,latin')
 
- @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic');
+ @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic')
 
 
 
  $whitebg = #F4FDFB
  $blue = #0063b1
  $green = #1D9870
- $greybg = #F2F2ED
+ $greybg = #ECECEC
+ $greenbg = #EAFFE5
+ $textblack = #4F5050
+
 
  $cta(color)
  	border-radius 25px
@@ -24,18 +27,23 @@
  	color #fff
  	font-size 60%
  	text-transform uppercase
- 	padding 15px 30px
+ 	padding 0 15px
  	box-shadow 1px 1px 1px #000
  	text-align center
  	display table
  	margin auto
- 	line-height 100%
- 	
+ 	line-height 50px
+ 	letter-spacing 0.08em
+ 	max-width 200px
+ 	width 100%
+ 	cursor pointer
+
  *
  	position relative
  	z-index 0
  	color inherit
  	letter-spacing 0.03em
+ 	font-weight inherit
 
  html,body 
  	font-size 18px
@@ -60,7 +68,7 @@
  	color $blue
  	letter-spacing 0.06em
  	border-bottom: 7px solid $blue
- 	display: inline-block
+ 	display: table
  	
  h1
  	font-size 330%
@@ -71,15 +79,38 @@
  	max-width 1240px
  	margin auto
  	z-index 3
- 	padding 20px 10px 
+ 	padding 20px 10px  90px 10px
  	
 
 
 .nt
+	margin-right 20px
+	
 	
 	&:after
 		content 'TM'
+		display inline-block
+		vertical-align super
+		font-size 40%
+		position absolute
+		top -20px
+		right -10px
 		
+
+
+#show-box
+	cursor pointer
+	display block !important
+	visibility visible !important
+	position fixed
+	height 100vh
+	width 100vw
+	top 0
+	left 0
+	background-size contain
+	background-position 50%
+	background-repeat no-repeat
+	background-color rgba(0, 0, 0, 0.64)
 
 /*
 -------------------------------------------------------------------------------
@@ -88,16 +119,16 @@
 
  @media screen and (min-width: 768px)
  	body
- 		font-size: 1.4rem
- 		
+ 		font-size 1.4rem
  	.container
- 		padding 40px 30px 
+ 		padding 40px 20px 90px
+
 
  @media screen and (min-width: 960px)
  	body
- 		font-size: 1.2rem
+ 		font-size 1.2rem
  	.container
- 		padding 40px 40px 
+ 		padding 40px 30px 90px
   
 
 /*
@@ -149,6 +180,15 @@
 				font-size 160%
 			.mail
 				font-size 80%
+				
+				svg
+					display inline-block
+					margin-right 10px
+					width 22px
+					vertical-align middle
+					
+					path
+						fill $whitebg
 			
 
 	
@@ -191,6 +231,11 @@ section.screen1
 			font-size 20%
 			vertical-align top
 			bottom -2em
+		.nt
+			&:after
+				right -30px
+				font-size 20%
+				
 	h2
 		font-size 120%
 		color #FFF
@@ -198,13 +243,16 @@ section.screen1
 		text-shadow 1px 1px 2px rgba(70, 70, 70, 0.67)
 		border none
 		
+		
 	.icons 
-		margin 100px auto
+		margin 50px auto
 		display flex
 		width 100%
 		
 		svg
 			margin auto
+			width 70px
+			
 			&:first-child
 				margin-right 0 
 			&:last-child
@@ -212,7 +260,7 @@ section.screen1
 	
 
 section.screen2
-	background-color $whitebg
+	background-color #FFF
 	
 	&:before
 		content ''
@@ -252,8 +300,10 @@ section.screen2
 		line-height 200%
 		
 		.one,.two
-			padding 20px
 			flex 1 1 480px
+		
+		.one
+			margin-right 40px
 
 	blockquote
 		margin 70px auto
@@ -265,30 +315,70 @@ section.screen2
 		color #313131
 		line-height 150%
 		display table
+	
 		
 	.features
 		max-width 720px
-		margin auto
 		
 		li
 			margin 50px 0
+			list-style none
+			
+			svg
+				display inline-block
+				vertical-align middle
+				margin-right 20px
+				width 38px
+				
+				path
+					fill $green
+			.txt
+				font-weight 600
+				display inline-block
+				vertical-align middle	
+				color $textblack
 			
 	.cta
 		$cta($blue)
 			
 
 section.screen3
-	background-color $greybg
+	background-color $greenbg
 		
 	.one,.two
 		display flex
 		flex-wrap wrap
-		line-height 200%
+		line-height 180%
 		
 		.left, .right
-			padding 20px
 			flex 1 1 480px
 			
+			.bg
+				padding 30px
+				margin 40px
+				text-align center
+				border 15px solid #9CA3A9
+				border-radius 15px
+				background-color #727E8A
+				box-shadow 1px 1px 1px #2b2b2b, inset 0px 0px 10px rgb(60, 63, 66)
+			    
+				img
+					opacity 0.9
+					box-shadow 3px 3px 20px #404040
+					
+	.one
+		.right
+			img, svg
+				float left
+				margin-right 30px
+			svg
+				max-width 80px
+				max-height 70px
+				margin-right 20px
+				
+			img+p, svg+p
+				margin-top -10px
+				margin-bottom 70px
 
 section.screen4
 	.features
@@ -299,23 +389,83 @@ section.screen4
 		li
 			flex 1 1 480px
 			margin 50px 0
+			list-style none
+			
+			svg
+				display inline-block
+				vertical-align middle
+				width 52px
+				margin-right 20px
+				
+				path
+					fill $blue
+			.txt
+				display inline-block
+				vertical-align middle
+				font-weight 600
+				max-width 50%
+				
 			
 	.cta
 		$cta($blue)
 		
 section.screen5
 	background-color $greybg
+	
+	.features
+		max-width 720px
+		
+		li
+			margin 50px 0
+			list-style none
+			
+			svg
+				display inline-block
+				vertical-align middle
+				margin-right 20px
+				width 38px
+				
+				path
+					fill $green
+			.txt
+				font-weight 600
+				display inline-block
+				vertical-align middle	
+				color $textblack
+				
+	.cta
+		$cta($blue)
 		
 section.contacts
+	background-color $greybg
+	
+	background-color: #35393E;
+	color: #FFF;
+	font-weight: 300;
+	
+	h1
+		color $whitebg
+	
 	.cta
 		$cta($green)
 		margin 40px 0 0 auto
 		
 	.phone
 		font-size 180%
+		margin-bottom 30px
 		
 	.mail
 		font-size 80%
+		color $blue
+		
+		svg
+			display inline-block
+			margin-right 10px
+			width 22px
+			vertical-align middle
+			
+			path
+				fill $blue
 		
 	.one
 		display flex
@@ -323,7 +473,6 @@ section.contacts
 		line-height 200%
 		
 		.left,.right
-			padding 20px
 			flex 1 1 480px
 		.right
 			text-align right
