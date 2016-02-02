@@ -7,33 +7,103 @@
  */                                                                                    
     
 
-@import '0set.styl'
+ @import url('https://fonts.googleapis.com/css?family=Exo+2:400,500,600,700,800,300&subset=cyrillic,latin');
+
+ @import url('https://fonts.googleapis.com/css?family=PT+Serif:400,400italic&subset=latin,cyrillic');
 
 
-$green = #1D9870
 
-$greybg = #E0E0D5
+ $whitebg = #F4FDFB
+ $blue = #0063b1
+ $green = #1D9870
+ $greybg = #F2F2ED
 
-$cta(color)
-	border-radius: 25px;
-	background-color: color;
-	color: #fff;
-	font-size: 60%;
-	text-transform: uppercase;
-	padding: 15px 30px;
-	box-shadow: 1px 1px 1px #000;
-	text-align center
-	display table
-	margin auto
-	line-height 100%
+ $cta(color)
+ 	border-radius 25px
+ 	background-color color
+ 	color #fff
+ 	font-size 60%
+ 	text-transform uppercase
+ 	padding 15px 30px
+ 	box-shadow 1px 1px 1px #000
+ 	text-align center
+ 	display table
+ 	margin auto
+ 	line-height 100%
+ 	
+ *
+ 	position relative
+ 	z-index 0
+ 	color inherit
+ 	letter-spacing 0.03em
 
+ html,body 
+ 	font-size 18px
+ 	padding 0
+ 	margin 0
+ 	height 100%
+ 	font-family 'Exo 2', sans-serif
+ 	font-weight 300
+ 	max-width 100vw
+ 	
+ body
+ 	font-size 2rem
+ 	overflow-x hidden
+
+ h1, h2, h3, h4, h5, ul, li
+ 	margin 0
+ 	padding 0
+ 	
+ h1, h2, h3
+ 	font-family 'PT Serif', serif
+ 	margin 50px 0
+ 	color $blue
+ 	letter-spacing 0.06em
+ 	border-bottom: 7px solid $blue
+ 	display: inline-block
+ 	
+ h1
+ 	font-size 330%
+ 	
+ .container
+ 	width 100%
+ 	min-width 960px
+ 	max-width 1240px
+ 	margin auto
+ 	z-index 3
+ 	padding 20px 10px 
+ 	
+
+
+.nt
 	
-*
-	position relative
-	z-index 0
-	color inherit
-	letter-spacing 0.03em
-	
+	&:after
+		content 'TM'
+		
+
+/*
+-------------------------------------------------------------------------------
+*/
+
+
+ @media screen and (min-width: 768px)
+ 	body
+ 		font-size: 1.4rem
+ 		
+ 	.container
+ 		padding 40px 30px 
+
+ @media screen and (min-width: 960px)
+ 	body
+ 		font-size: 1.2rem
+ 	.container
+ 		padding 40px 40px 
+  
+
+/*
+-------------------------------------------------------------------------------
+*/
+
 
 .header
 	width 100%
@@ -84,11 +154,12 @@ $cta(color)
 	
 section.screen1
 	height calc(100% - 30px)
-	background-image url('http://www.traemcneely.com/wp-content/uploads/2015/03/wpid-wp-1426826982146.jpeg')
-	background-position 50% 50%
-	background-repeat no-repeat
-	background-size cover
-	background-attachment fixed
+	// background-image url('images/main.jpg')
+	// background-color #4c4e4e
+	// background-position 50% 50%
+	// background-repeat no-repeat
+	// background-size cover
+	// background-attachment fixed
 	
 	&:after
 		content ''
@@ -97,7 +168,7 @@ section.screen1
 		z-index 5
 		position absolute
 		top 0
-		background-color: rgba(75, 85, 95, 0.8);
+		background linear-gradient(to bottom, #094677 0%, #0063b1 80%, #074D85 100%)
 
 	.container
 		z-index 9
@@ -113,8 +184,9 @@ section.screen1
 		line-height 140%
 		font-size 280%
 		color #FFF
-		margin auto auto 20px auto
+		margin auto auto 0px auto
 		text-shadow 1px 1px 2px rgba(70, 70, 70, 0.67)
+		border none
 		sub
 			font-size 20%
 			vertical-align top
@@ -122,9 +194,21 @@ section.screen1
 	h2
 		font-size 120%
 		color #FFF
-		margin 20px auto auto auto
+		margin 0px auto auto auto
 		text-shadow 1px 1px 2px rgba(70, 70, 70, 0.67)
+		border none
 		
+	.icons 
+		margin 100px auto
+		display flex
+		width 100%
+		
+		svg
+			margin auto
+			&:first-child
+				margin-right 0 
+			&:last-child
+				margin-left 0
 	
 
 section.screen2
@@ -156,10 +240,11 @@ section.screen2
 	
 	.bg 
 		z-index 3
-		background-position 50% 50%
+		background-position 50% 0%
 		background-repeat no-repeat
-		background-size cover
-		// background-image url('http://woodruss.ru/information/uploads/posts/2011-11/1321088576_stan1.jpg')
+		background-size contain
+		background-image url('../images/lenta.jpg')
+		
 	
 	.text
 		display flex
@@ -171,18 +256,18 @@ section.screen2
 			flex 1 1 480px
 
 	blockquote
-		margin: 70px 0;
-		border-left: 7px solid #1d5298;
-		padding-left: 20px;
-		font-size: 160%;
-		font-style: italic;
-		width: 90%;
-		font-weight: 500;
-		color: #4A4A4A;
-		line-height: 150%;
+		margin 70px auto
+		border-left 7px solid #1d5298
+		padding-left 20px
+		font-size 160%
+		font-style italic
+		font-weight 500
+		color #313131
+		line-height 150%
+		display table
 		
 	.features
-		max-width 480px
+		max-width 720px
 		margin auto
 		
 		li
@@ -221,7 +306,7 @@ section.screen4
 section.screen5
 	background-color $greybg
 		
-section.screen6
+section.contacts
 	.cta
 		$cta($green)
 		margin 40px 0 0 auto
