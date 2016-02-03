@@ -12,18 +12,14 @@
  var gulp = require('gulp'),
      server = require('gulp-server-livereload'),
      notify = require('gulp-notify'),
-
      jade = require('gulp-jade'),
      stylus = require('gulp-stylus'),
-
-
      uglify = require('gulp-uglify'),
      concat = require('gulp-concat'),
-
      pngquant = require('imagemin-pngquant'),
      imagemin = require('gulp-imagemin'),
      minifyCSS = require('gulp-minify-css'),
-     prefxcss = require('gulp-autoprefixer'),
+     autoprefixer = require('gulp-autoprefixer'),
      rename = require('gulp-rename');
 
 
@@ -81,6 +77,10 @@
  // css add
  gulp.task('css', function() {
      gulp.src('app/css/*.css')
+         .pipe(autoprefixer({
+                browsers: ['last 5 versions'],
+                cascade: false
+            }))
          .pipe(minifyCSS())
          .pipe(concat('css.css'))
          .pipe(gulp.dest('./dist/css'));
@@ -90,6 +90,10 @@
  gulp.task('stylus', ['css'],function() {
      gulp.src('app/**/*.styl')
          .pipe(stylus())
+         .pipe(autoprefixer({
+                browsers: ['last 5 versions'],
+                cascade: false
+            }))
          .pipe(minifyCSS())
          .pipe(concat('all.min.css'))
          .pipe(gulp.dest('./dist/css'));

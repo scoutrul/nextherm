@@ -2,32 +2,31 @@ doctype
 html(lang='ru')
 	head
 	meta(charset='utf-8')
-	meta(name='viewport', content='width=device-width', initial-scale='1')
+	meta(name='viewport', content='width=960', initial-scale='1')
 	title Полипропиленовые трубы "NexTherm", производство
 
 	link(href='//cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css', rel='stylesheet') 
 	link(href='css/all.min.css', rel='stylesheet') 
 	link(href='css/css.css', rel='stylesheet') 
 
-	script(src='//cdn.jsdelivr.net/vivus/0.2.0/vivus.min.js')
 
 
-body
+body#body
 
 	.header
-		.sticky-wrapper 
-			.container
+		.container
+			nav.navmenu 
 				.logo 
-					h4
-						<i>NexTherm</i>
-				nav.navmenu 
-					ul.menu
-						li
-							a(href='#') Продукция
-						li
-							a(href='#') Клиентам
-						li
-							a(href='#') Контакты
+					a(href='#body')
+						h4
+							<i>NexTherm</i>
+				ul.menu
+					li
+						a(href='#production', class='production') Продукция
+					li
+						a(href='#clients', class='clients') Клиентам
+					li
+						a(href='#contacts', class='contacts') Контакты
 
 				.cta Задать вопрос
 				.contact
@@ -44,7 +43,7 @@ body
 
 	section.screen1
 		.container
-			h1 Производство и поставки полипропиленовых труб <br>марки <i><span class="nt">NexTherm</span></i>
+			h1 Производство и поставки<br> полипропиленовых труб <br>марки <i><span class="nt">NexTherm</span></i>
 			.icons 
 				svg(width='80pt', height='80pt', viewbox='0 0 80 80', version='1.1', xmlns='http://www.w3.org/2000/svg', id='svg')
 					g(id='#94b1fdff')
@@ -88,7 +87,7 @@ body
 
 			h2 для водоснабжения, отопления и систем кондиционирования
 
-	section.screen2
+	section#production
 		section.bg
 			.container
 				h1 Продукция
@@ -151,8 +150,7 @@ body
 			.one
 				.left 
 					.bg
-						a(id="certificate")
-							img(src='images/certificate.jpg')
+						img(src='images/certificate.jpg', id="certificate")
 				.right 
 					h3 Сертификация
 
@@ -197,7 +195,7 @@ body
 						a(id="protocole")
 							img(src='images/protocole.jpg')
 
-	section.screen4
+	section#clients
 		.container
 			h1 Почему клиенты выбирают нас?
 			
@@ -206,7 +204,7 @@ body
 					svg(width='80pt', height='80pt', viewbox='0 0 80 80', version='1.1', xmlns='http://www.w3.org/2000/svg')
 						g(id='#000000ff')
 							path(fill='#000000', opacity='1.00', d=' M 37.49 2.68 C 40.09 1.62 43.76 1.91 45.32 4.55 C 46.71 5.97 47.42 9.28 49.99 8.53 C 53.03 7.77 56.74 7.07 58.90 10.00 C 61.57 12.63 59.95 16.30 59.13 19.35 C 64.99 16.15 70.69 12.67 76.40 9.21 C 76.75 9.92 77.46 11.33 77.81 12.03 C 72.88 15.61 67.40 18.32 62.22 21.50 C 64.15 23.21 66.42 25.15 65.84 28.06 C 66.16 32.08 61.61 33.02 59.44 35.42 C 59.06 38.74 61.63 42.71 58.46 45.40 C 55.65 49.00 51.33 46.25 47.73 46.58 C 45.61 49.13 44.00 53.29 39.97 52.81 C 36.17 53.15 34.15 49.51 32.83 46.56 C 31.47 46.60 30.11 46.54 28.77 46.37 C 28.84 54.96 28.73 63.55 28.83 72.14 C 32.32 68.92 35.59 65.47 39.04 62.22 C 43.22 65.25 46.86 68.92 50.70 72.35 C 50.80 66.91 50.70 61.47 50.70 56.02 C 50.77 54.48 50.57 52.78 51.54 51.45 C 52.44 51.43 53.34 51.43 54.24 51.47 C 54.25 59.36 54.36 67.24 54.24 75.12 C 54.53 76.59 53.31 77.46 52.44 78.37 C 48.13 74.36 43.62 70.58 39.35 66.53 C 35.56 70.40 31.68 74.18 27.85 78.01 C 27.28 77.81 26.16 77.43 25.60 77.23 C 25.57 67.35 25.59 57.46 25.59 47.57 C 22.73 46.38 20.48 44.24 19.64 41.20 C 20.13 39.24 21.11 37.28 20.82 35.21 C 18.95 32.63 14.48 31.87 14.44 28.03 C 13.87 25.31 15.95 23.33 17.51 21.43 C 12.16 18.05 6.13 15.60 1.48 11.24 C 2.07 10.80 3.25 9.93 3.84 9.49 C 9.64 13.01 15.46 16.50 21.39 19.81 C 20.74 16.39 18.95 11.89 22.26 9.25 C 24.88 6.28 28.83 8.15 32.08 8.57 C 34.32 7.06 35.01 3.95 37.49 2.68 M 35.36 10.35 C 32.82 13.00 28.97 11.15 25.90 10.80 C 21.91 12.07 24.60 16.19 24.55 19.06 C 24.35 22.19 21.30 23.76 18.87 25.07 C 18.44 25.59 17.58 26.63 17.15 27.15 C 18.99 30.31 23.40 31.21 24.36 34.94 C 25.05 37.71 21.75 41.34 24.66 43.42 C 27.33 44.51 30.23 42.00 32.91 43.17 C 35.89 44.14 36.79 47.51 38.83 49.57 C 42.11 50.55 42.92 46.60 44.83 44.84 C 47.24 41.96 51.39 43.36 54.35 44.45 C 55.14 43.60 56.28 42.99 56.71 41.86 C 56.67 39.08 54.75 36.11 56.62 33.56 C 58.03 30.72 63.72 30.39 62.44 26.45 C 60.60 24.36 57.31 23.61 56.30 20.79 C 55.02 18.40 56.79 15.91 57.42 13.60 C 55.09 8.60 49.46 14.03 46.02 11.05 C 44.18 9.52 43.39 7.08 41.58 5.54 C 38.19 4.26 37.29 8.58 35.36 10.35 Z')
-					.txt Гарантии качества продукции 
+					.txt Гарантии качества<br> производимой продукции 
 
 				li 
 					svg(width='80pt', height='80pt', viewbox='0 0 80 80', version='1.1', xmlns='http://www.w3.org/2000/svg')
@@ -237,7 +235,7 @@ body
 							path(fill='#000000', opacity='1.00', d=' M 39.03 32.42 C 43.14 31.66 47.42 31.59 51.52 32.46 C 52.72 33.55 52.53 34.43 50.97 35.10 C 47.24 35.57 43.46 35.20 39.72 35.28 C 39.50 34.32 39.27 33.37 39.03 32.42 Z')
 							path(fill='#000000', opacity='1.00', d=' M 39.27 38.79 C 45.79 37.91 52.42 38.68 58.99 38.41 C 62.48 38.65 66.47 37.45 69.40 39.96 C 66.84 42.40 63.21 41.40 60.05 41.58 C 53.15 41.29 46.19 42.06 39.33 41.21 C 39.31 40.60 39.28 39.39 39.27 38.79 Z')
 							path(fill='#000000', opacity='1.00', d=' M 40.91 47.77 C 38.72 48.28 39.58 45.99 39.43 44.69 C 45.70 44.86 51.99 44.35 58.24 44.93 C 58.40 45.51 58.74 46.66 58.90 47.23 C 53.04 48.53 46.88 47.64 40.91 47.77 Z')
-					.txt  Профессиональная консультация
+					.txt  Профессиональная<br>консультация
 
 				li 
 					svg(width='80pt', height='80pt', viewbox='0 0 80 80', version='1.1', xmlns='http://www.w3.org/2000/svg')
@@ -299,9 +297,9 @@ body
 
 
 	section.map#map
-		script(type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=JtXPaJP1Y8GiArgIHLrIn63UcecCiSFO&width=100%&height=800&lang=ru_RU&sourceType=constructor")
+		script(type="text/javascript" charset="utf-8" src="https://api-maps.yandex.ru/services/constructor/1.0/js/?sid=JtXPaJP1Y8GiArgIHLrIn63UcecCiSFO&width=100%&height=600&lang=ru_RU&sourceType=constructor")
 
-	section.contacts
+	section#contacts
 		.container
 			h1 Контакты
 			.one
@@ -328,8 +326,25 @@ body
 
 
 	script(src="//ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js")
-	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery.lazy/1.6.5/jquery.lazy.min.js")
 
 	script(src="//cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/jquery.waypoints.min.js")
 
+	script(src='//cdn.jsdelivr.net/vivus/0.2.0/vivus.min.js')
+	script(src='//cdn.jsdelivr.net/jquery.scrollto/2.1.0/jquery.scrollTo.min.js')
+	script(src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js")
 	script(src="js/script.min.js")
+
+	#show-box
+		.close
+	#cta-box
+		.close
+
+		form(action='#').contactForm
+			h2 Сообщение
+			label Ваше имя: 
+			input#form_name(type='text', placeholder='Представьтесь, пожалуйста (имя, компания')
+			label Контакт: 
+			input#form_contact(type='text', placeholder='e-mail и/или номер телефона')
+			label Сообщение: 
+			textarea#form_text(name='text', cols='30', rows='10', placeholder='Что Вас интересует?')
+			button.send_mail Отправить
