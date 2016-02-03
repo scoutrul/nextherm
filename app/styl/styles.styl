@@ -106,6 +106,7 @@
 #show-box
 	cursor pointer
 #show-box, #cta-box
+	display none
 	z-index 10
 	position fixed
 	height 100vh
@@ -118,6 +119,7 @@
 	background-position 50%
 	background-repeat no-repeat
 	background-color rgba(0, 0, 0, 0.64)
+	
 	
 	.close
 		cursor pointer
@@ -150,6 +152,7 @@
 		flex-direction: column
 		justify-content: space-between
 		font-size: 80%
+		box-shadow 0 11px 30px rgba(0, 0, 0, 0.57)
 		
 		input, textarea
 			padding 5px
@@ -495,6 +498,7 @@ section.screen3
 				box-shadow 1px 1px 1px #2b2b2b, inset 0px 0px 10px rgb(60, 63, 66)
 				background-image url('../images/2x2.png')
 				background-repeat repeat
+				background-attachment fixed
 			    
 				img
 					opacity 0.9
