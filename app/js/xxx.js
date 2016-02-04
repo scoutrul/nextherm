@@ -21,7 +21,13 @@ $(document).ready(function() {
 		$('#clients li, #production li, .screen5 li, .screen3 .bg img').css({'opacity':'1'});
 
 		$('section#production').addClass('isMobile');
-	}// mobile fix
+	}
+
+	if (navigator.vendor && navigator.vendor.indexOf('Apple') > -1 && navigator.userAgent && !navigator.userAgent.match('CriOS')) 
+	{
+	   $('section#production').addClass('isMobile');       
+	}
+	// mobile fix
 
 
 //////////////////////////////////////////////////////////////////////
