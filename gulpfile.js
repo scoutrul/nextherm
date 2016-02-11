@@ -116,7 +116,7 @@
 
 
 
- gulp.task('default', ['server', 'jss', 'stylus', 'jade', 'watch']);
+ gulp.task('default', ['server', 'jss', 'stylus', 'jade', 'imgminify', 'watch']);
 
 
 

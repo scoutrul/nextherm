@@ -318,6 +318,13 @@ section.screen1
 	min-height 960px
 	background-color $blue
 	
+	.mir
+		z-index 10
+		position absolute
+		top 10%
+		right 5%
+		opacity .9
+	
 	.nt
 		background-color: inherit;
 	
@@ -412,6 +419,14 @@ section.screen1
 		margin-top 10px
 
 section#production
+	.mir
+		z-index: 100;
+		position: absolute;
+		right: 40px;
+		bottom: -70px;
+		filter: contrast(0%);
+		transform: rotate(-40deg)
+		
 	.container
 		z-index 5
 	
@@ -505,6 +520,9 @@ section#production
 				vertical-align middle	
 				color $blacktxt
 			
+	.price
+		text-align center
+
 	.cta
 		$cta($blue)
 			
@@ -563,7 +581,7 @@ section#clients
 			line-height 40px
 			opacity 0
 			
-			svg
+			svg, img
 				display inline-block
 				vertical-align middle
 				height 72px
