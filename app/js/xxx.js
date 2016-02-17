@@ -302,20 +302,6 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////
 	
 
-	// Home screen auto scroll
-	var screen1Scroll = new Waypoint.Inview({
-		element: $('.screen1'),
-		enter: function(direction) {
-			$('html, body').animate({
-				scrollTop: $("body").offset().top
-			}, 500);
-			console.log('enter');
-		},
-		exited: function(direction) {
-			console.log('exited');
-		
-		}
-	});
 
 
 	// menu click
@@ -374,6 +360,22 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////
 
 
+// Home screen auto scroll
+var screen1Scroll = new Waypoint.Inview({
+	element: $('.screen1'),
+	enter: function(direction) {
+		$('html, body').animate({
+			scrollTop: $("body").offset().top
+		}, 1200);
+		console.log('enter');
+	},
+	exited: function(direction) {
+		console.log('exited');
+	
+	}
+});
+
+
 	$('#waterpu').hover(
 		function(){
 			$('#waterpu .hidden').addClass('active').css({'left':'20%'})
@@ -405,7 +407,7 @@ $(document).ready(function() {
 
 
 
-	$('.hidden a').on('click', function(){
+	$('.hidden a').on('click', function(e){
 		e.preventDefault()
 		$('html, body').animate({
 			scrollTop: $("#price").offset().top
