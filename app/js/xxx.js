@@ -3,7 +3,7 @@ $(document).ready(function() {
 
 
 //////////////////////////////////////////////////////////////////////
-// for mobile device 
+// if mobile device 
 //////////////////////////////////////////////////////////////////////
 
 	var isMobile = false; 
@@ -27,11 +27,11 @@ $(document).ready(function() {
 	{
 	   $('section#production').addClass('isMobile');       
 	}
-	// mobile fix
+	// mobile fixing
 
 
 //////////////////////////////////////////////////////////////////////
-// weypoints
+// weypoints.js
 //////////////////////////////////////////////////////////////////////
 
 
@@ -141,7 +141,6 @@ $(document).ready(function() {
 
 
 	// screen1 icons animate
-
 	var waterTermWind = new Waypoint.Inview({
 		element: $('.screen1'),
 			enter: function(direction) {
@@ -166,7 +165,7 @@ $(document).ready(function() {
 			}
 		});
 
-	// certificate and protocole fade in
+	// certificate and protocole fade-in
 	var certificate = new Waypoint.Inview({
 		element: $('.screen3 .one'),
 			enter: function(direction) {
@@ -191,6 +190,10 @@ $(document).ready(function() {
 			}
 		});
 
+
+
+
+
 //////////////////////////////////////////////////////////////////////
 
 
@@ -201,27 +204,37 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////
 
 	$('#show-box').hide();
+	var hide = true;
 
 	$('#certificate').on('click', function(e){
 		$('#show-box').show().css({
-			'backgroundImage':'url(\'../images/certificate-nextherm.jpg\')'
+			'backgroundImage':'url(\'../images/certificate-nextherm.jpeg\')'
 		});
-		e.preventDefault()
+		e.preventDefault();
+		hide = false;
+		console.log('false')
 	});
 
 	$('#protocole').on('click', function(e){
 		$('#show-box').show().css({
 			'backgroundImage':'url(\'../images/protocole-nextherm.jpg\')'
 		});
-		e.preventDefault()
+		e.preventDefault();
+		hide = false;
+		console.log('false')
+
 	});
 
-	$('#show-box, #show-box .close').on('click', function(){
-		$('#show-box').hide().css({
-			'backgroundImage':''
+	if(hide === false){
+		$('#cta-box, #show-box .close').on('click', function(){
+			$('#show-box').hide().css({
+				'backgroundImage':''
+			});
+			hide = true;
+		console.log('true')
+
 		});
-
-	});
+	};
 
 
 
@@ -287,8 +300,25 @@ $(document).ready(function() {
 //////////////////////////////////////////////////////////////////////
 // Smooth scroll's 
 //////////////////////////////////////////////////////////////////////
+	
+
+	// Home screen auto scroll
+	var screen1Scroll = new Waypoint.Inview({
+		element: $('.screen1'),
+		enter: function(direction) {
+			$('html, body').animate({
+				scrollTop: $("body").offset().top
+			}, 500);
+			console.log('enter');
+		},
+		exited: function(direction) {
+			console.log('exited');
+		
+		}
+	});
 
 
+	// menu click
 	$(".logo").click(function(e) {
 		e.preventDefault()
 		$('html, body').animate({
@@ -336,3 +366,48 @@ $(document).ready(function() {
 
 
 });
+
+
+
+//////////////////////////////////////////////////////////////////////
+// ToolTips
+//////////////////////////////////////////////////////////////////////
+
+
+	$('#waterpu').hover(
+		function(){
+			$('#waterpu .hidden').addClass('active').css({'left':'20%'})
+		},
+		function(){
+			$('.hidden').removeClass('active')
+		}
+	);
+	$('#termpu').hover(
+		function(){
+			$('#termpu .hidden').addClass('active').css({'left':'calc(50% - 200px)'})
+		},
+		function(){
+			$('.hidden').removeClass('active')
+		}
+	);
+	$('#windpu').hover(
+		function(){
+			$('#windpu .hidden').addClass('active').css({'right':'20%'})
+		},
+		function(){
+			$('.hidden').removeClass('active')
+		}
+	);
+
+	$('.icons').on('mouseleave', function() {
+			$('.hidden').removeClass('active')
+	});
+
+
+
+	$('.hidden a').on('click', function(){
+		e.preventDefault()
+		$('html, body').animate({
+			scrollTop: $("#price").offset().top
+		}, 1500);
+	});
