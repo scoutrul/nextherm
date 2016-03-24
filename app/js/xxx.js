@@ -258,7 +258,7 @@ $(document).ready(function() {
 	});
 
 	// отправка
-	$("#cta-box button").click(function() {
+	$("#cta-box .send_mail").click(function() {
 		$('input, textarea').removeClass('form_error');
 		var hasError = false;
 		var name = $("#form_name").val();
