@@ -212,7 +212,6 @@ $(document).ready(function() {
 		});
 		e.preventDefault();
 		hide = false;
-		console.log('false')
 	});
 
 	$('#protocole').on('click', function(e){
@@ -221,20 +220,17 @@ $(document).ready(function() {
 		});
 		e.preventDefault();
 		hide = false;
-		console.log('false')
 
 	});
 
-	if(hide === false){
-		$('#cta-box, #show-box .close').on('click', function(){
-			$('#show-box').hide().css({
-				'backgroundImage':''
-			});
-			hide = true;
-		console.log('true')
-
+		$('#show-box, #show-box .close').on('click', function(){
+			if(hide === false){
+					$('#show-box').hide().css({
+						'backgroundImage':''
+					});
+					hide = true;
+			}
 		});
-	};
 
 
 
