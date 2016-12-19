@@ -432,22 +432,23 @@ section.screen1
 				
 			.hidden
 				z-index 1000
-				display none
+				box-shadow: 5px 15px 0px rgba(0, 0, 0, 0.15)
 				text-align: left
 				position: absolute
 				bottom: 120px
 				width: 380px
 				background-color rgb(41, 142, 105)
-				border-radius: 10px
 				padding: 30px
-				transition .5s ease
+				transition .3s ease-in
 				font-size 70%
 				line-height 170%
 				font-weight 300
+				opacity 0
 				
 				&.active
-					display block
+
 					bottom 170px
+					opacity 1
 					
 				a
 					display block
@@ -566,6 +567,9 @@ section#production
 		font-size 200%
 		text-align center
 		margin 40px
+		color: #ff5050;
+		background-color: #ffffff;
+		font-weight: 600;
 			
 
 section.screen3
@@ -617,7 +621,7 @@ section#clients
 		
 		li
 			flex 1 1 480px
-			margin 50px 0
+			margin 100px 0
 			list-style none
 			line-height 40px
 			opacity 0
@@ -649,7 +653,7 @@ section.screen5
 		display flex
 		flex-wrap wrap
 		li
-			margin 50px auto
+			margin 100px auto
 			list-style none
 			opacity 0
 			display flex
@@ -675,6 +679,7 @@ section.screen5
 				
 	.cta
 		$cta($blue)
+		background-color: #33a5ff;
 
 section#map
 	border 0px solid #848484
@@ -812,3 +817,64 @@ section#contacts
 	animation-iteration-count: 1
 	animation-fill-mode: forwards;
 	
+
+//testimonials
+.quote-contain {
+	min-height 540px;
+}
+
+.quote-rotate 
+	position: absolute;
+	top: 10px;
+	opacity: 0;
+	overflow: visible;
+	visibility: hidden;
+	transition: opacity, 0.3s, ease;
+	padding-bottom: 10px;
+
+	&:before 
+		content: '"';
+		position: absolute;
+		top: -15px;
+		left: -25px;
+		font-size: 200%;
+		font-style: italic;
+	&:after 
+		content: '"';
+		position: absolute;
+		bottom: -5px;
+		left: -25px;
+		font-size: 200%;
+		font-style: italic;
+
+.quote-dots {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.nav-dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50px;
+  border: 1px solid black;
+  display: inline-block;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.quotes {
+  position: relative;
+    margin: 100px auto;
+  max-width: 500px;
+  position: relative;
+}
+
+.show {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+}
+
+.dot-fill { background-color: black; }
+
+.nav-dot:last-of-type { margin: 0; }

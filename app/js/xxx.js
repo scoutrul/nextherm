@@ -58,15 +58,24 @@ $(document).ready(function() {
 	});
 
 	var menuFixActiveClients = new Waypoint.Inview({
-		element: $('#clients')[0],
+		element: $('#clients .features')[0],
+
 		entered: function(direction) {
-			$('.clients').addClass('active');
-		},
-		enter: function(direction) {
 			$('.clients').addClass('active');
 		},
 		exited: function(direction) {
 			$('.clients').removeClass('active');
+		}
+	});
+
+
+	var menuFixActiveContacts = new Waypoint.Inview({
+		element: $('#testi')[0],
+		entered: function(direction) {
+			$('.testi').addClass('active');
+		},
+		exited: function(direction) {
+			$('.testi').removeClass('active');
 		}
 	});
 
@@ -79,7 +88,6 @@ $(document).ready(function() {
 			$('.contacts').removeClass('active');
 		}
 	});
-
 
 
 
@@ -347,6 +355,9 @@ $(document).ready(function() {
 	if(!isMobile) $( window ).scroll(screen1Parlalax);	// mobile fix
 
 
+
+
+
 });
 
 
@@ -395,3 +406,53 @@ $(document).ready(function() {
 			scrollTop: $("#price").offset().top
 		}, 1500);
 	});
+
+
+
+
+//////////////////////////////////////////////////////////////////////
+// Testimonials
+//////////////////////////////////////////////////////////////////////
+
+
+var spinner = {
+    index: 0,
+    auto: function(currentIndex) {
+      if (currentIndex != undefined) {
+        spinner.index = currentIndex % spinner.quotes.length;
+      } else {
+        spinner.index = (spinner.index + 1) % spinner.quotes.length;
+      }
+      spinner.quotes.removeClass("show");
+      $(spinner.quotes[spinner.index]).addClass("show");
+      spinner.dots.removeClass('dot-fill');
+      $(spinner.dots[spinner.index]).addClass('dot-fill');
+    },
+
+    initial: function(){
+      this.quotes = $(".quote-rotate");
+      this.images = $(".quote-image");
+      spinner.quotes.first().addClass("show");
+      //dots
+      for (i = 0; i < spinner.quotes.length; i++) {
+        $('.quote-dots').append('<div class="nav-dot"></div>');
+      }
+      this.dots = $(".nav-dot");
+      $(spinner.dots).first().addClass('dot-fill');
+    },
+
+    dotnav: function(){
+      $(spinner.dots).on("click", function(){
+        var currentIndex = $(spinner.dots).index(this);
+        spinner.auto(currentIndex);
+        window.clearInterval(interval);
+        interval = window.setInterval(spinner.auto, 11500);
+      });
+    }
+  }
+
+$(document).ready(function() {
+  spinner.initial();
+  spinner.dotnav();
+  interval = window.setInterval(spinner.auto, 6000);
+});
