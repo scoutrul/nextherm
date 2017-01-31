@@ -57,6 +57,16 @@ $(document).ready(function() {
 		}
 	});
 
+	var menuFixActiveProd = new Waypoint.Inview({
+		element: $('#price')[0],
+		enter: function(direction) {
+			$('.pricel').addClass('active');
+		},
+		exited: function(direction) {
+			$('.pricel').removeClass('active');
+		}
+	});
+
 	var menuFixActiveClients = new Waypoint.Inview({
 		element: $('#clients .features')[0],
 
