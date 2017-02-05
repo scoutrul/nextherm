@@ -57,7 +57,7 @@ $(document).ready(function() {
 		}
 	});
 
-	var menuFixActiveProd = new Waypoint.Inview({
+	var menuFixActivePrice = new Waypoint.Inview({
 		element: $('#price')[0],
 		enter: function(direction) {
 			$('.pricel').addClass('active');
@@ -68,7 +68,7 @@ $(document).ready(function() {
 	});
 
 	var menuFixActiveClients = new Waypoint.Inview({
-		element: $('#clients .features')[0],
+		element: $('#clients')[0],
 
 		entered: function(direction) {
 			$('.clients').addClass('active');
@@ -79,7 +79,7 @@ $(document).ready(function() {
 	});
 
 
-	var menuFixActiveContacts = new Waypoint.Inview({
+	var menuFixActiveTesti = new Waypoint.Inview({
 		element: $('#testi')[0],
 		entered: function(direction) {
 			$('.testi').addClass('active');
